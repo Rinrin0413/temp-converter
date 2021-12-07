@@ -10,4 +10,4 @@
 
 <br />
 
-© [GNU General Public License v3.0](./LICENSE.md)
+[GNU General Public License v3.0](./LICENSE.md)
