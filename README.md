@@ -1,12 +1,14 @@
-# Temperature converter ( °C / °F / K )
+# Temperature converter ( °C / °F / K ) ![Latest release](https://img.shields.io/github/v/release/Rinrin0413/temp-converter?color=FFB200&label=Latest%20release)
 
     摂氏温度, 華氏温度, 絶対温度(ケルビン)対応の温度換算器です。
     Rust で作られているので速いです(適当)
     安心安全の Rinrin製です！
 
+![DLs](https://img.shields.io/github/downloads/Rinrin0413/temp-converter/total?color=FFFD8C&style=plastic)
+
 > 使い方♪
 
-1. ["./assets/temp-converter.exe"](./assets/temp-converter.exe) をダウンロードする。    
+1. [converter.exe](https://github.com/Rinrin0413/temp-converter/releases/tag/v1.0) をダウンロードする。    
 ※ウイルスの誤検知が入る場合がありますが許可してください。
 1. ダウンロードした exeファイルを起動する。
 1. 基準とする温度単位を [摂氏, 華氏, ｹﾙﾋﾞﾝ] から [a, b, c] で選んで実行して下さい。
