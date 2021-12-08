@@ -8,7 +8,7 @@
 
 > 使い方♪
 
-1. [converter.exe](https://github.com/Rinrin0413/temp-converter/releases/tag/v1.0) をダウンロードする。    
+1. [temp-converter.exe](https://github.com/Rinrin0413/temp-converter/releases/tag/v1.0) をダウンロードする。    
 ※ウイルスの誤検知が入る場合がありますが許可してください。
 1. ダウンロードした exeファイルを起動する。
 1. 基準とする温度単位を [摂氏, 華氏, ｹﾙﾋﾞﾝ] から [a, b, c] で選んで実行して下さい。
