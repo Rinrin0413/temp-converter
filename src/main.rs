@@ -3,22 +3,26 @@ use std::io; // 入出力
 
 // DB
 const LINE:&str = "========================================";
+const CELSIUS:&str = "摂氏温度";
+const FAHRENHEIT:&str = "華氏温度";
+const KELVIN:&str = "絶対温度";
+const ERR_FTG:&str = "取得に失敗しました。";
 
 fn main() {
     loop {
         println!("基準の温度単位を選んで下さい(a, b, c)");
-        println!("a.摂氏温度(°C)");
-        println!("b.華氏温度(°F)");
-        println!("c.絶対温度(K)");
+        println!("a.{}(°C)", CELSIUS);
+        println!("b.{}温度(°F)", FAHRENHEIT);
+        println!("c.{}(K)", KELVIN);
         let mut input_temp_unit = String::new();
-        io::stdin().read_line(&mut input_temp_unit).expect("取得に失敗しました。");
+        io::stdin().read_line(&mut input_temp_unit).expect(ERR_FTG);
         let input_temp_unit:&str = &input_temp_unit.trim(); // String型なので &strに変換
         
         match input_temp_unit { // trimメソッドで入力時の改行入力を除去
             "a" | "b" | "c" => {
                 println!("温度を入力して下さい。");
                 let mut input_temp_value = String::new();
-                io::stdin().read_line(&mut input_temp_value).expect("取得に失敗しました。");
+                io::stdin().read_line(&mut input_temp_value).expect(ERR_FTG);
                 let input_temp_value:f64 = match input_temp_value.trim().parse() { // 改行入力削除及び変換
                     Ok(num) => num,
                     _ => { println!("数値を入力して下さい"); continue }
@@ -51,9 +55,9 @@ fn main() {
                     let msg = "[正常に換算されました]"; msg
                 };
                 println!("{}", wheth_too_small);
-                println!("摂氏温度 : {}°C", c_temp);
-                println!("華氏温度 : {}°F", f_temp);
-                println!("絶対温度 : {}K", k_temp);
+                println!("{} : {}°C", CELSIUS, c_temp);
+                println!("{} : {}°F", FAHRENHEIT, f_temp);
+                println!("{} : {}K", KELVIN, k_temp);
 
                 println!("\n換算を続けますか?[y, n]");
                 let mut wheth_continue = String::new();
