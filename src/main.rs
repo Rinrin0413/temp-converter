@@ -27,22 +27,22 @@ fn main() {
                 };
 
                 println!("計算中...");
-                const AVOA0:f64 = 273.15; // 絶対零度の絶対値
+                const ABS0:f64 = 273.15; // 絶対零度の絶対値
                 let c_temp = match input_temp_unit {
                     "a" => input_temp_value, // input_temp_value が既に摂氏温度
                     "b" => (input_temp_value - 32.0)/1.8, // 華氏 -> 摂氏
-                    "c" => input_temp_value - AVOA0, // ケルビン -> 摂氏
+                    "c" => input_temp_value - ABS0, // ケルビン -> 摂氏
                     _ => { err_msg(); continue }
                 }; 
                 let f_temp = match input_temp_unit {
                     "a" => input_temp_value*1.8 + 32.0, // 摂氏 -> 華氏
                     "b" => input_temp_value, // 華氏温度そのもの
-                    "c" => (input_temp_value - AVOA0)*1.8 + 32.0, // ケルビン -> 華氏
+                    "c" => (input_temp_value - ABS0)*1.8 + 32.0, // ケルビン -> 華氏
                     _ => { err_msg(); continue }
                 };
                 let k_temp = match input_temp_unit {
-                    "a" => input_temp_value + AVOA0, // 摂氏 -> ケルビン
-                    "b" => (input_temp_value - 32.0)/1.8 + AVOA0, // 華氏 -> ケルビン
+                    "a" => input_temp_value + ABS0, // 摂氏 -> ケルビン
+                    "b" => (input_temp_value - 32.0)/1.8 + ABS0, // 華氏 -> ケルビン
                     "c" => input_temp_value, // 絶対温度そのもの
                     _ => { err_msg(); continue }
                 };
