@@ -1,17 +1,27 @@
 // Modules
 use std::io; // 入出力
 
+struct Temp {
+    c: &'static str,
+    f: &'static str,
+    k: &'static str,
+}
+
 // DB
 const LINE:&str = "========================================";
-const TEMP:(&str, &str, &str) = ("摂氏温度", "華氏温度", "絶対温度");
+const TEMP: Temp = Temp {
+    c: "摂氏温度",
+    f: "華氏温度",
+    k: "絶対温度"
+};
 const ERR_FTG:&str = "取得に失敗しました。";
 
 fn main() {
     loop {
         println!("基準の温度単位を選んで下さい(a, b, c)");
-        println!("a.{}(°C)", TEMP.0);
-        println!("b.{}温度(°F)", TEMP.1);
-        println!("c.{}(K)", TEMP.2);
+        println!("a.{}(°C)", TEMP.c);
+        println!("b.{}(°F)", TEMP.f);
+        println!("c.{}(K)", TEMP.k);
         let mut input_temp_unit = String::new();
         io::stdin().read_line(&mut input_temp_unit).expect(ERR_FTG);
         let input_temp_unit:&str = &input_temp_unit.trim(); // String型なので &strに変換
@@ -53,9 +63,9 @@ fn main() {
                     let msg = "[正常に換算されました]"; msg
                 };
                 println!("{}", wheth_too_small);
-                println!("{} : {}°C", TEMP.0, c_temp);
-                println!("{} : {}°F", TEMP.1, f_temp);
-                println!("{} : {}K", TEMP.2, k_temp);
+                println!("{} : {}°C", TEMP.c, c_temp);
+                println!("{} : {}°F", TEMP.f, f_temp);
+                println!("{} : {}K", TEMP.k, k_temp);
 
                 println!("\n換算を続けますか?[y, n]");
                 let mut wheth_continue = String::new();
@@ -76,6 +86,4 @@ fn main() {
     }
 }
 
-fn err_msg() {
-    println!("計算に失敗しました\n{}", LINE);
-}
+fn err_msg() { println!("計算に失敗しました\n{}", LINE); }
