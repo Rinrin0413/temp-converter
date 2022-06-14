@@ -106,7 +106,7 @@ impl Temps {
 
 /// Calculates temperatures based on the given base temperatures and unit.
 ///
-/// And returns the Result<Temps, ()>
+/// And returns the `Result<Temps, ()>`
 /// 
 /// # Examples:
 /// 
