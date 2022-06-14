@@ -108,7 +108,7 @@ impl Temps {
 ///
 /// And returns the Result<Temps, ()>
 /// 
-/// #Examples:
+/// # Examples:
 /// 
 /// ```
 /// let temps = calc_temp(TempUnit::Celsius, 36.5).unwrap();
@@ -126,6 +126,7 @@ impl Temps {
 /// Celsius: 36.5
 /// Fahrenheit: 97.7
 /// Absolute(Kelvin): 309.65"
+/// );
 /// ```
 pub fn calc_temp(temp_unit: TempUnit, temp_value: f64) -> Result<Temps, ()> {
     println!("Calculating...");
